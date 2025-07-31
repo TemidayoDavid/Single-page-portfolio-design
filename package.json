@@ -4,7 +4,8 @@
   "description": "![Design preview for the Single-page developer portfolio coding challenge](./preview.jpg)",
   "scripts": {
     "dev": "parcel src/index.html",
-    "build": "parcel build src/index.html"
+    "build": "parcel build src/index.html",
+    "deploy": "gh-pages -d dist"
   },
   "keywords": [],
   "author": "",
@@ -12,7 +13,9 @@
   "type": "commonjs",
   "devDependencies": {
     "@parcel/transformer-sass": "^2.15.4",
+    "gh-pages": "^6.3.0",
     "parcel": "^2.15.4",
+   
     "sass": "^1.89.2"
   }
 }
