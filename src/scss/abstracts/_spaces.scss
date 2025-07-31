@@ -1,0 +1,38 @@
+/** spaces**/
+
+
+$space-0: 0;
+$space-1: 0.0625rem;
+$space-7: 0.4375rem;
+$space-10: 0.625rem;
+$space-14: 0.875rem;
+$space-18: 1.125rem;
+$space-20: 1.25rem;
+$space-24: 1.5rem;
+$space-26: 1.625rem;
+$space-30: 1.875rem;
+$space-32: 2rem;
+$space-34: 2.125rem;
+$space-36: 2.125rem;
+$space-40: 2.5rem;
+$space-48: 3rem;
+$space-50: 3.125rem;
+$space-52: 3.25rem;
+$space-58: 3.625rem;
+$space-60: 3.75rem;
+$space-72: 4.5rem;
+$space-80: 5rem;
+
+
+$space-socials: clamp($space-26, 0.75vw + 1.3rem, $space-32);
+$space-skills-rowgap-tab-desk: clamp($space-52, 0.89vw + 2.82rem, $space-58);
+$space-skills-paddingblock-tab-desk: clamp($space-52, 2.976vw + 1.82rem, $space-72);
+$space-contact-mob-desk: clamp($space-20, 6vw + 1rem, $space-36);
+
+
+/**Display and gap**/
+
+@mixin display-gap ($display, $gap) {
+    display: $display;
+    gap: $gap;
+}

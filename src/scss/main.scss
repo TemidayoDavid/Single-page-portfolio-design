@@ -1,0 +1,620 @@
+@use "./abstracts" as *;
+
+body {
+  font-family: $ff-space-grotesk;
+  background-color: $clr-black;
+  color: $clr-white;
+}
+
+section {
+  padding-block-end: 5rem;
+}
+
+header {
+  position: absolute;
+  width: 100%;
+  padding-block: 1.5rem;
+  z-index: 10;
+}
+
+footer {
+  background-color: $clr-dark-gray;
+}
+
+h2 {
+  @include font-style($fs-heading-h1, $lh-heading-h1);
+}
+
+h3 {
+  @include font-style($fs-32, $lh-32-40);
+  font-weight: 700;
+}
+
+h5 {
+  @include font-style($fs-24, $lh-24-32);
+  text-transform: uppercase;
+  margin: 0;
+}
+
+p {
+  @include font-style($fs-body, $lh-body);
+  color: $clr-light-gray;
+}
+
+form {
+  position: relative;
+
+  @include display-gap(grid, $space-32);
+}
+
+input,
+textarea {
+  color: $clr-white;
+  background-color: transparent;
+  border: none;
+  border-block-end: 0.0625rem solid $clr-light-gray;
+  padding-inline-start: 1.5rem;
+}
+
+input {
+  padding-block-end: 1rem;
+}
+
+textarea {
+  padding-block-end: 5rem;
+  resize: none;
+}
+
+input:focus,
+input:hover,
+textarea:focus,
+textarea:hover {
+  border-block-end: 0.0625rem solid $clr-green;
+  outline: none;
+}
+
+input.invalid {
+  border-color: $clr-red;
+}
+
+.error-message,
+.error-symbol {
+  position: absolute;
+  right: 0;
+  display: none;
+  color: $clr-red;
+}
+
+.error-message {
+  @include font-style($fs-12, $lh-16-16);
+  top: 123;
+}
+
+.error-symbol {
+  top: 75;
+  border-radius: 31.25rem;
+  border: 0.0625rem solid $clr-red;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.error-symbol__sign {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.error-message.active,
+.error-symbol.active {
+  display: block;
+}
+
+.container {
+  width: 91.4667%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.header {
+  @include display-gap(grid, $space-20);
+}
+
+.header__links {
+  width: 1.230625rem;
+  height: 1.2rem;
+}
+
+.logo,
+.contact__name {
+  @include font-style($fs-logo, $lh-24-32);
+  font-weight: 700;
+  letter-spacing: -0.020625rem;
+}
+
+.header__items {
+  @include display-gap(flex, $space-socials);
+  justify-content: center;
+}
+
+.hero__container {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.grid-skill-padding {
+  @include display-gap(grid, $space-24);
+  padding-block: 2.5rem;
+}
+
+.grid-skill-padding,
+.projects__cards {
+  grid-auto-columns: 1fr;
+  grid-template-areas:
+    "first"
+    "second"
+    "third"
+    "fourth"
+    "fifth"
+    "sixth";
+}
+
+.grid-contact-padding {
+  padding-block-start: 3.75rem;
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero__img {
+  width: 10.875rem;
+}
+
+// i would most likely delete this positioning
+.hero__image {
+  position: relative;
+}
+
+.hero__heading {
+  @include font-style($fs-heading-h1, $lh-heading-h1);
+  letter-spacing: -0.07125rem;
+}
+
+.hero__paragraph {
+  @include font-style($fs-body, $lh-16-26);
+}
+
+.hero__text {
+  @include display-gap(grid, $space-24);
+  place-items: center;
+}
+
+.hero__heading br {
+  display: none;
+}
+
+.pattern__circle {
+  position: absolute;
+  right: -70;
+  top: 254;
+}
+
+.pattern__rings {
+  position: absolute;
+  left: clamp(-12.5rem, 9.39vw - 14.7006875rem, -6.25rem);
+  top: clamp(7.75rem, 0.845vw + 7.55rem, 8.3125rem);
+  height: 8.6875rem;
+  width: 33.125rem;
+}
+
+.skill {
+  position: relative;
+  overflow: hidden;
+}
+
+.skill > .container {
+  border-block: 0.0625rem solid $clr-white;
+}
+
+.skill__typ:nth-child(1),
+.projects__card-items:nth-child(1) {
+  grid-area: first;
+}
+.skill__typ:nth-child(2),
+.projects__card-items:nth-child(2) {
+  grid-area: second;
+}
+.skill__typ:nth-child(3),
+.projects__card-items:nth-child(3) {
+  grid-area: third;
+}
+.skill__typ:nth-child(4),
+.projects__card-items:nth-child(4) {
+  grid-area: fourth;
+}
+.skill__typ:nth-child(5),
+.projects__card-items:nth-child(5) {
+  grid-area: fifth;
+}
+.skill__typ:nth-child(6),
+.projects__card-items:nth-child(6) {
+  grid-area: sixth;
+}
+
+.pattern__rings-skill {
+  position: absolute;
+  bottom: 15;
+  right: -191;
+  height: 8.0625rem;
+  width: 33.125rem;
+}
+
+.projects__title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-block-end: 2.5rem;
+}
+
+.projects__cards {
+  @include display-gap(grid, $space-40);
+}
+
+.projects__card-items {
+  text-align: start;
+
+  @include display-gap(grid, $space-20);
+}
+
+.projects__card-text {
+  @include display-gap(grid, $space-7);
+}
+
+.project__card-skills-list {
+  @include display-gap(flex, $space-18);
+}
+
+.project__card-btn:nth-child(2) {
+  margin-inline-start: $space-30;
+}
+
+.contact {
+  position: relative;
+}
+
+.contact__heading {
+  margin-block-end: $space-contact-mob-desk;
+}
+
+.contact__paragraph {
+  margin-block-end: $space-50;
+}
+
+.pattern__rings-contact {
+  position: absolute;
+  bottom: 85;
+  left: -191;
+  height: 8.0625rem;
+  width: 33.125rem;
+}
+
+.form__button {
+  display: flex;
+  justify-content: end;
+}
+
+.contact__secondary-container {
+  @include display-gap(flex, $space-20);
+  flex-direction: column;
+  padding-block-start: 2.4375rem;
+  border-block-start: 0.0625rem solid $clr-white;
+}
+
+.contact__socials {
+  @include display-gap(flex, $space-socials);
+  justify-content: center;
+}
+
+// utility classes
+
+.u-underline {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0.125rem;
+    height: 0.25rem;
+    width: 97%;
+
+    background-color: $clr-green;
+  }
+}
+
+.btn {
+  position: relative;
+  text-transform: uppercase;
+
+  @include font-style($fs-16, $lh-16-26);
+  font-weight: 700;
+  letter-spacing: 0.143125rem;
+  padding-block-end: 0.625rem;
+  cursor: pointer;
+
+  border: none;
+  color: $clr-white;
+  background-color: transparent;
+  @include btn-transition(color);
+
+  &:hover,
+  &:focus {
+    color: $clr-green;
+  }
+}
+
+.btn::before {
+  content: "";
+  width: 100%;
+  height: 0.125rem;
+  background-color: $clr-green;
+  bottom: 0;
+  position: absolute;
+}
+
+@media (min-width: 48em) {
+  h3 {
+    @include font-style($fs-48, $lh-48-56);
+  }
+
+  .container {
+    text-align: initial;
+  }
+
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &__links {
+      width: auto;
+      height: auto;
+    }
+  }
+
+  .hero__container {
+    flex-direction: initial;
+
+    .hero__image {
+      position: absolute;
+      right: 0;
+      z-index: -1;
+    }
+
+    .hero__img {
+      width: 20.125rem;
+      min-height: 37.5rem;
+      object-fit: cover;
+    }
+
+    .hero__text {
+      display: block;
+      margin-block-start: 9.4375rem;
+      width: 70%;
+      place-items: start;
+    }
+
+    .hero__heading {
+      margin-block-end: $space-60;
+    }
+    .hero__paragraph {
+      margin-block-end: $space-34;
+      width: 26.25rem;
+      max-width: 85%;
+    }
+  }
+
+  .grid-skill-padding {
+    row-gap: $space-skills-rowgap-tab-desk;
+    padding-block: $space-skills-paddingblock-tab-desk;
+  }
+
+  .skill > .container {
+    border-block-end: none;
+  }
+
+  .pattern__rings-skill {
+    bottom: 80;
+    right: -315;
+  }
+
+  .projects__cards {
+    gap: $space-24;
+  }
+
+  .contact__secondary {
+    padding-block-end: 2.5rem;
+  }
+
+  .contact__secondary-container {
+    @include display-gap(flex, $space-0);
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .contact {
+    padding-block-end: 5.75rem;
+  }
+
+  .contact__socials {
+    display: flex;
+    align-items: center;
+  }
+}
+
+@media (min-width: 48em) and (max-width: 89.9375em) {
+  .u-underline {
+    line-height: 6rem;
+  }
+
+  .grid-skill-padding,
+  .projects__cards {
+    grid-template-areas:
+      "first second"
+      "third fourth"
+      "fifth sixth";
+  }
+
+  .hero__text {
+    width: 50rem;
+  }
+
+  .hero__heading {
+    @include font-style($fs-72, $lh-72-72);
+  }
+
+  .hero__paragraph {
+    font-size: $fs-18;
+  }
+
+  .hero__heading br {
+    display: inline-block;
+  }
+
+  .pattern__circle {
+    top: 471;
+  }
+
+  .pattern__rings {
+    left: -16.5625rem;
+    top: 5.375rem;
+  }
+
+  .pattern__rings-contact {
+    bottom: 25;
+    left: -365;
+  }
+
+  .grid-contact-padding {
+    text-align: center;
+    width: 57.9%;
+  }
+}
+
+@media (min-width: 90em) {
+  .container {
+    width: 77.08%;
+  }
+
+  .grid-skill-padding {
+    grid-template-areas:
+      "first second third"
+      "fourth fifth sixth";
+  }
+
+  .projects__cards {
+    grid-template-areas:
+      "first second"
+      "third fourth"
+      "fifth sixth";
+  }
+
+  .projects__card-items {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 5%;
+      left: 0;
+      height: 85%;
+      width: 100%;
+      background: $clr-dark-gray;
+      opacity: 0;
+      @include btn-transition(all);
+    }
+
+    &:hover {
+      &::after {
+        top: 0;
+        opacity: 0.7;
+      }
+      .project__card-btn {
+        opacity: 1;
+      }
+    }
+
+    .project__card-btn:nth-child(2) {
+      margin-inline-start: 0;
+    }
+
+    .project__card-buttons {
+      @include display-gap(grid, $space-48);
+      position: absolute;
+      top: 45%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+      place-items: center;
+    }
+
+    .project__card-btn {
+      opacity: 0;
+    }
+  }
+
+  .hero__container {
+    position: relative;
+    padding-block-end: 6.875rem;
+
+    .hero__img {
+      width: 27.8125rem;
+      min-height: 45rem;
+    }
+
+    .hero__text {
+      margin-block-start: 12.375rem;
+    }
+
+    .hero__heading {
+      max-width: 46.875rem;
+    }
+
+    .hero__paragraph {
+      width: 26.25rem;
+      max-width: 53.5%;
+      margin-block-end: 4.125rem;
+    }
+  }
+
+  .pattern__rings-skill {
+    bottom: 100;
+    right: -240;
+  }
+
+  .pattern__rings-contact {
+    bottom: 55;
+  }
+
+  .pattern__circle {
+    right: 550;
+    top: 521;
+  }
+
+  .grid-contact-padding {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .contact__text {
+    max-width: 38.6%;
+  }
+
+  .contact__form {
+    width: 45%;
+  }
+}

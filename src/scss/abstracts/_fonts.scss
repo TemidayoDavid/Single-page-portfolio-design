@@ -1,0 +1,48 @@
+/**font family**/
+
+$ff-space-grotesk: "Space Grotesk", sans-serif;
+
+/**font sizse**/
+$fs-12: 0.74rem;
+$fs-16: 1rem;
+$fs-18: 1.125rem;
+$fs-24: 1.5rem;
+$fs-32: 2rem;
+$fs-40: 2.5rem;
+$fs-48: 3rem;
+$fs-72: 4.5rem;
+$fs-88: 5.5rem;
+
+$fs-logo: clamp($fs-24, 0.75vw + 1.3rem, $fs-32);
+$fs-heading-h1: clamp($fs-40, 4.5vw + 1.44rem, $fs-88);
+$fs-body: clamp($fs-16, 0.18779vw + 0.955986rem, $fs-18);
+$fs-btn: 1rem;
+$fs-heading-m: 1rem;
+$fs-heading-l: 1rem;
+$fs-heading-xl: 1rem;
+
+
+/**line heingt multiplied by font-size**/
+
+$lh-16-16: 1rem;
+$lh-16-26: 1.625rem;
+$lh-18-28: 1.75rem;
+$lh-24-32: 2rem;
+$lh-32-40: 2.5rem;
+$lh-40-40: 2.5rem;
+$lh-48-56: 3.5rem;
+$lh-72-72: 4.5rem;
+$lh-88-88: 5.5rem;
+
+$lh-logo: $lh-24-32;
+$lh-heading-h1: clamp($lh-40-40, 4.5vw + 1.44rem, $lh-88-88);
+$lh-body: clamp($lh-16-26, 1.58rem + 0.18779vw, $lh-18-28);
+
+
+/**font mixin**/
+
+@mixin font-style($font-size, $line-height) {
+  font-size: $font-size;
+  line-height: $line-height;
+  
+}
