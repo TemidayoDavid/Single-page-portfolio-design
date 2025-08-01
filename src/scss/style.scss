@@ -22,7 +22,7 @@ footer {
 }
 
 h2 {
-  @include font-style($fs-heading-h1, $lh-heading-h1);
+  display: none;
 }
 
 h3 {
@@ -33,17 +33,21 @@ h3 {
 h5 {
   @include font-style($fs-24, $lh-24-32);
   text-transform: uppercase;
-  margin: 0;
 }
 
-p {
+
+p,
+li {
   @include font-style($fs-body, $lh-body);
   color: $clr-light-gray;
 }
 
+li {
+  list-style: none;
+}
+
 form {
   position: relative;
-
   @include display-gap(grid, $space-32);
 }
 
@@ -209,6 +213,10 @@ input.invalid {
   width: 33.125rem;
 }
 
+.projects__heading, .contact__heading {
+  @include font-style($fs-heading-h1, $lh-heading-h1);
+}
+
 .skill {
   position: relative;
   overflow: hidden;
@@ -218,27 +226,27 @@ input.invalid {
   border-block: 0.0625rem solid $clr-white;
 }
 
-.skill__typ:nth-child(1),
+.skill__type:nth-child(1),
 .projects__card-items:nth-child(1) {
   grid-area: first;
 }
-.skill__typ:nth-child(2),
+.skill__type:nth-child(2),
 .projects__card-items:nth-child(2) {
   grid-area: second;
 }
-.skill__typ:nth-child(3),
+.skill__type:nth-child(3),
 .projects__card-items:nth-child(3) {
   grid-area: third;
 }
-.skill__typ:nth-child(4),
+.skill__type:nth-child(4),
 .projects__card-items:nth-child(4) {
   grid-area: fourth;
 }
-.skill__typ:nth-child(5),
+.skill__type:nth-child(5),
 .projects__card-items:nth-child(5) {
   grid-area: fifth;
 }
-.skill__typ:nth-child(6),
+.skill__type:nth-child(6),
 .projects__card-items:nth-child(6) {
   grid-area: sixth;
 }
@@ -263,7 +271,7 @@ input.invalid {
 }
 
 .projects__card-items {
-  text-align: start;
+  text-align: left;
 
   @include display-gap(grid, $space-20);
 }
@@ -286,6 +294,7 @@ input.invalid {
 
 .contact__heading {
   margin-block-end: $space-contact-mob-desk;
+
 }
 
 .contact__paragraph {
@@ -567,6 +576,10 @@ input.invalid {
     }
   }
 
+  .hero {
+    padding-block-end: 6.5rem;
+  }
+
   .hero__container {
     position: relative;
     padding-block-end: 6.875rem;
@@ -605,9 +618,23 @@ input.invalid {
     top: 521;
   }
 
+  .skill__name {
+    margin-block-end: $space-14;
+  }
+
+  .projects__cards {
+    column-gap: $space-30;
+    row-gap: $space-69;
+  }
+
+  .projects {
+    padding-block-end: 8.6875rem;
+  }
+
   .grid-contact-padding {
     display: flex;
     justify-content: space-between;
+    padding-block-start: 5.25rem;
   }
 
   .contact__text {
@@ -616,5 +643,9 @@ input.invalid {
 
   .contact__form {
     width: 45%;
+  }
+
+  .contact__secondary {
+    padding-block-end: 5.75rem;
   }
 }
