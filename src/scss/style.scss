@@ -25,6 +25,10 @@ h2 {
   display: none;
 }
 
+.visually-hidden {
+  display: none
+}
+
 h3 {
   @include font-style($fs-32, $lh-32-40);
   font-weight: 700;
@@ -84,18 +88,18 @@ input.invalid {
 .error-message,
 .error-symbol {
   position: absolute;
-  right: 0;
+  right: 0rem;
   display: none;
   color: $clr-red;
 }
 
 .error-message {
   @include font-style($fs-12, $lh-16-16);
-  top: 123;
+  top: 7.6875rem;
 }
 
 .error-symbol {
-  top: 75;
+  top: 4.6875rem;
   border-radius: 31.25rem;
   border: 0.0625rem solid $clr-red;
   width: 1.5rem;
@@ -201,8 +205,8 @@ input.invalid {
 
 .pattern__circle {
   position: absolute;
-  right: -70;
-  top: 254;
+  right: -4.375rem;
+  top: 15.875rem;
 }
 
 .pattern__rings {
@@ -253,8 +257,8 @@ input.invalid {
 
 .pattern__rings-skill {
   position: absolute;
-  bottom: 15;
-  right: -191;
+  bottom: 0.9375rem;
+  right: -11.9375rem;
   height: 8.0625rem;
   width: 33.125rem;
 }
@@ -303,8 +307,8 @@ input.invalid {
 
 .pattern__rings-contact {
   position: absolute;
-  bottom: 85;
-  left: -191;
+  bottom: 5.3125rem;
+  left: -11.9375rem;
   height: 8.0625rem;
   width: 33.125rem;
 }
@@ -334,7 +338,7 @@ input.invalid {
   &::after {
     content: "";
     position: absolute;
-    left: 0;
+    left: 0rem;
     bottom: 0.125rem;
     height: 0.25rem;
     width: 97%;
@@ -369,7 +373,7 @@ input.invalid {
   width: 100%;
   height: 0.125rem;
   background-color: $clr-green;
-  bottom: 0;
+  bottom: 0rem;
   position: absolute;
 }
 
@@ -398,7 +402,7 @@ input.invalid {
 
     .hero__image {
       position: absolute;
-      right: 0;
+      right: 0rem;
       z-index: -1;
     }
 
@@ -435,8 +439,8 @@ input.invalid {
   }
 
   .pattern__rings-skill {
-    bottom: 80;
-    right: -315;
+    bottom: 5rem;
+    right: -19.6875rem;
   }
 
   .projects__cards {
@@ -493,7 +497,7 @@ input.invalid {
   }
 
   .pattern__circle {
-    top: 471;
+    top: 29.4375rem;
   }
 
   .pattern__rings {
@@ -502,8 +506,8 @@ input.invalid {
   }
 
   .pattern__rings-contact {
-    bottom: 25;
-    left: -365;
+    bottom: 1.5626rem;
+    left: -22.8125rem;
   }
 
   .grid-contact-padding {
@@ -539,7 +543,7 @@ input.invalid {
       content: "";
       position: absolute;
       top: 5%;
-      left: 0;
+      left: 0rem;
       height: 85%;
       width: 100%;
       background: $clr-dark-gray;
@@ -549,7 +553,7 @@ input.invalid {
 
     &:hover {
       &::after {
-        top: 0;
+        top: 0rem;
         opacity: 0.7;
       }
       .project__card-btn {
@@ -605,17 +609,17 @@ input.invalid {
   }
 
   .pattern__rings-skill {
-    bottom: 100;
-    right: -240;
+    bottom: 6.25rem;
+    right: -15rem;
   }
 
   .pattern__rings-contact {
-    bottom: 55;
+    bottom: 3.4375rem;
   }
 
   .pattern__circle {
-    right: 550;
-    top: 521;
+    right: 34.375rem;
+    top: 32.5625rem;
   }
 
   .skill__name {
@@ -623,8 +627,7 @@ input.invalid {
   }
 
   .projects__cards {
-    column-gap: $space-30;
-    row-gap: $space-69;
+     gap: $space-69 $space-30;
   }
 
   .projects {
